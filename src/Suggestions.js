@@ -55,7 +55,7 @@ export async function getSuggestions(query, signal) {
     const remainingSlots = MAX_SUGGESTIONS - historyMatches.length;
 
     let liveMatches = [];
-    if (remainingSlots > 0) < {
+    if (remainingSlots > 0) {
         const live = await getLiveMatches(trimmed, signal);
         const historyTextsLower = new Set(
             historyMatches.map((h) => h.text.toLowerCase())
