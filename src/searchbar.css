@@ -26,7 +26,7 @@
   border-color: var(--glow-color, #a855f7);
 }
 .searchbar-container.glow-in .searchbar-input {
-  box-shadow: 0 0 28px 4px color-mix(in srgb, var(--glow-color, #a855f7) 55%, transparent);
+  box-shadow: 0 0 48px 8px color-mix(in srgb, var(--glow-color, #a855f7) 75%, transparent);
 }
 .suggestions-dropdown {
   position: absolute;
