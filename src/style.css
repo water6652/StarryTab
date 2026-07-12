@@ -35,3 +35,12 @@ body {
   inset: 0;
   background: rgba(10, 6, 20, 0.35);
 }
+.site-footer {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: rgba(240, 235, 250, 0.4);
+  z-index: 1;
+}
