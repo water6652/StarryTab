@@ -1,0 +1,99 @@
+.searchbar-container {
+  position: fixed;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(560px, 90vw);
+}
+.searchbar-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 1.4rem;
+  font-size: 1.05rem;
+  font: inherit;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  background: #1a1030;
+  color: #f0ebfa;
+  outline: none;
+  box-shadow: 0 0 0px 0px var(--glow-color, #a855f7);
+  transition: box-shadow 1.8s ease-out, border-color 0.3s ease;
+}
+.searchbar-input::placeholder {
+  color: #7a6f96;
+}
+.searchbar-input:focus {
+  border-color: var(--glow-color, #a855f7);
+}
+.searchbar-container.glow-in .searchbar-input {
+  box-shadow: 0 0 28px 4px color-mix(in srgb, var(--glow-color, #a855f7) 55%, transparent);
+}
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.4rem;
+  list-style: none;
+  background: #1a1030;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 10;
+  animation: dropdown-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes dropdown-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.suggestion-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  color: #d9d2ec;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+
+  opacity: 0;
+  transform: translateY(-4px);
+  animation: item-in 0.25s ease-out forwards;
+}
+@keyframes item-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+.suggestion-item.active {
+  background: rgba(168, 85, 247, 0.12);
+}
+.suggestion-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background: radial-gradient(
+    120px circle at var(--x, 50%) var(--y, 50%),
+    color-mix(in srgb, var(--glow-color, #a855f7) 35%, transparent),
+    transparent 70%
+  );
+  transition: opacity 0.2s ease;
+}
+.suggestion-item:hover::before {
+  opacity: 1;
+}
+.suggestion-icon {
+  display: flex;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+.suggestion-text {
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

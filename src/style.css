@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* new-tab pages generally shouldn't scroll */
+}
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #f0ebfa;
+}
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* sits behind everything else */
+  background-color: #0a0614; /* fallback while the NASA image loads/if it fails */
+  background-size: cover;
+  background-position: center;
+
+  /* fades in once nasaBackground.js sets the image */
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.background.loaded {
+  opacity: 1;
+}
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 6, 20, 0.35);
+}
