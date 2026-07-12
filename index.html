@@ -1,12 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StarryTab</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="background" class="background"></div>
+    <div id="onboarding-overlay" class="onboarding-overlay" hidden>
+      <div class="onboarding-card">
+        <div id="onboarding-step-engine" class="onboarding-step">
+          <h1>Pick your search engine</h1>
+          <p class="onboarding-sub">You can change this later.</p>
+          <div id="engine-grid" class="engine-grid"></div>
+          <input
+            id="custom-template-input"
+            class="custom-template-input"
+            placeholder="https://example.com/search?q=%s"
+            hidden
+          />
+          <button id="onboarding-next" class="onboarding-next" disabled>
+            Next
+          </button>
+        </div>
+
+        <div id="onboarding-step-color" class="onboarding-step" hidden>
+          <h1>Pick your favorite color</h1>
+          <p class="onboarding-sub">
+            This sets the glow around your search bar.
+          </p>
+          <div id="color-grid" class="color-grid"></div>
+          <button id="onboarding-done" class="onboarding-next">Done</button>
+        </div>
+      </div>
+    </div>
+    <div id="search-container" class="searchbar-container" hidden>
+      <input
+        id="search-input"
+        class="searchbar-input"
+        type="text"
+        placeholder="Search or enter a URL"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <ul id="suggestions-dropdown" class="suggestions-dropdown" hidden></ul>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
