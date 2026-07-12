@@ -1,7 +1,10 @@
-// main.js
-console.log("StarryTab is running!");
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
 
-document.querySelector('#app').innerHTML = `
-  <h1>StarryTab</h1>
-  <p>Hello from main.js 🚀</p>
-`;
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
