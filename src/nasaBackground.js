@@ -1,12 +1,13 @@
 const CACHE_KEY = "starrytab_apod_cache";
 const APOD_ENDPOINT = "https://api.nasa.gov/planetary/apod";
+
 function todayKey() {
   return new Date().toISOString().slice(0, 10);
 }
 function readCache() {
-  try{
-    const raw = window.localStorage.getItem(CACHE_KEY)
-    return raw ? JSON.prase(raw) : null;
+  try {
+    const raw = window.localStorage.getItem(CACHE_KEY);
+    return raw ? JSON.parse(raw) : null;
   } catch {
     return null;
   }
@@ -23,16 +24,9 @@ async function fetchApod() {
   }
   const apiKey = import.meta.env.VITE_NASA_API_KEY;
   const url = `${APOD_ENDPOINT}?api_key=${apiKey}`;
-
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`NASA APOD request failed: ${res.status}`);
-  }
-  const apiKey = import.meta.env.VITE_NASA_API_KEY;
-  const url = '${APOD_ENDPOINT}?api_key=${apiKey}';
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error('NASA APOD request failed: ${res.status}');
   }
   const data = await res.json();
   const entry = {
@@ -46,7 +40,6 @@ async function fetchApod() {
   writeCache(entry);
   return entry;
 }
-//sonion
 export async function initNasaBackground() {
   const backgroundEl = document.getElementById("background");
   if (!backgroundEl) return;
@@ -55,13 +48,13 @@ export async function initNasaBackground() {
     if (!imageUrl) return;
     const img = new Image();
     img.onload = () => {
-      backgroundEl.style.backgroundImage = 'url("${imageUrl}")';
+      backgroundEl.style.backgroundImage = `url("${imageUrl}")`;
       backgroundEl.classList.add("loaded");
     };
     img.onerror = () => {
     };
     img.src = imageUrl;
   } catch (err) {
-    console.warn("Could not load NASA background:", err)
+    console.warn("Could not load NASA background:", err);
   }
 }
