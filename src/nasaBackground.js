@@ -1,5 +1,5 @@
 const CACHE_KEY = "starrytab_apod_cache";
-const APOD_ENDPOINT
+const APOD_ENDPOINT = "https://api.nasa.gov/planetary/apod";
 function todayKey() {
   return new Date().toISOString().slice(0, 10);
 }
