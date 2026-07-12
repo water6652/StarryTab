@@ -1,4 +1,4 @@
-import { SEARCH_ENGINES } from "./Searchengines";
+import { SEARCH_ENGINES } from "./searchEngines";
 import { setStored } from "./storage";
 
 const PRESET_COLORS = [
