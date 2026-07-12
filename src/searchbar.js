@@ -95,7 +95,7 @@ export function initSearchBar(prefs) {
     if (!value) return;
     addToHistory(value);
     renderSuggestions([]);
-    if (isLikelyUrl(value)) {
+    if (istsaurl(value)) {
       window.location.href = normalizeUrl(value);
     } else {
       window.location.href = buildSearchUrl(
