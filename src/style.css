@@ -7,21 +7,22 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow: hidden; /* new-tab pages generally shouldn't scroll */
+  overflow: hidden;
 }
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   color: #f0ebfa;
 }
+[hidden] {
+  display: none !important;
+}
 .background {
   position: fixed;
   inset: 0;
-  z-index: -1; /* sits behind everything else */
-  background-color: #0a0614; /* fallback while the NASA image loads/if it fails */
+  z-index: -1;
+  background-color: #0a0614;
   background-size: cover;
   background-position: center;
-
-  /* fades in once nasaBackground.js sets the image */
   opacity: 0;
   transition: opacity 1.2s ease;
 }
