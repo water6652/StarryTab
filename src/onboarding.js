@@ -18,7 +18,7 @@ export function initOnboarding(onComplete) {
     const doneBtn = document.getElementById("onboarding-done");
     const stepEngine = document.getElementById("onboarding-step-engine");
     const stepColor = document.getElementById("onboarding-step-color");
-    let selectionEngine = "google";
+    let selectedEngine = "google";
     let selectedColor = PRESET_COLORS[0];
 
     Object.entries(SEARCH_ENGINES).forEach(([key, engine]) => {
@@ -48,7 +48,7 @@ export function initOnboarding(onComplete) {
       selectedEngine !== "custom" || customInput.value.includes("%s");
     nextBtn.disabled = !isCustomValid;
     }
-    customInput.addEventListener("input", up);
+    customInput.addEventListener("input", updateNextEnabled);
     nextBtn.addEventListener("click", () => {
         stepEngine.hidden = true;
         stepColor.hidden = false;
