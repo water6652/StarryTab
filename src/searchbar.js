@@ -1,5 +1,5 @@
 import { getSuggestions, addToHistory } from "./suggestions.js";
-import { isLikelyUrl, normalizeUrl } from "./searchUtils.js";
+import { istsaurl, normalizeUrl } from "./searchUtils.js";
 import { buildSearchUrl } from "./searchEngines.js";
 
 const DEBOUNCE_MS = 180;
