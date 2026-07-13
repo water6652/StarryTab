@@ -1,8 +1,8 @@
-#StarryTab: a lightweight, Dead simple, new tab page built with HTML+CSS+JS.
+# StarryTab: a lightweight, Dead simple, new tab page built with HTML+CSS+JS.
 
 <img width="1920" height="813" alt="y7" src="https://github.com/user-attachments/assets/7b740c82-3dbe-43eb-a0d3-077910c9a41a" />
-**StarryTab** is a free open-source new tab webpage available [here](https://water6652.github.io/StarryTab/), **StarryTab** offers a very fast and lightweight experience with zero interruptions, no ads, no widgets, no unnecessary bloat, just a search bar and you.
-##Features:
+ **StarryTab** is a free open-source new tab webpage available [here](https://water6652.github.io/StarryTab/), **StarryTab** offers a very fast and lightweight experience with zero interruptions, no ads, no widgets, no unnecessary bloat, just a search bar and you.
+## Features:
 
 **1- a two-step initial setup:** you choose your favorite search engine (or set a custom one), set a favorite color, and you're ready!
 <img width="1920" height="1039" alt="image" src="https://github.com/user-attachments/assets/b96542c5-c538-495a-a0f0-76b24b3f1995" />
