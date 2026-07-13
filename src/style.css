@@ -44,3 +44,25 @@ body {
   color: rgba(240, 235, 250, 0.4);
   z-index: 1;
 }
+.reset-settings-btn {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  background: rgba(26, 16, 48, 0.6);
+  color: rgba(240, 235, 250, 0.55);
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.reset-settings-btn:hover {
+  color: #f0ebfa;
+  border-color: rgba(168, 85, 247, 0.6);
+  transform: rotate(45deg);
+}
