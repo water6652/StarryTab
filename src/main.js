@@ -14,3 +14,7 @@ if (prefs) {
 } else {
   initOnboarding((newPrefs) => initSearchBar(newPrefs));
 }
+document.getElementById("reset-settings").addEventListener("click", () => {
+  window.localStorage.removeItem("starrytab_prefs");
+  window.location.reload();
+});
